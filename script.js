@@ -39,6 +39,7 @@ function addMensajeUser(texto) {
 	container.appendChild(mensajeContainer);
 
 	mensajeUser.textContent = texto;
+	scrollToBottom();
 }
 
 function addMensajeBot(texto) {
@@ -58,6 +59,8 @@ function addMensajeBot(texto) {
 	container.appendChild(botContainer);
 
 	mensajeBot.textContent = texto;
+
+	scrollToBottom();
 }
 // Con esta funcion, forzaremos el texto abajo.
 function scrollToBottom() {
@@ -68,6 +71,8 @@ function scrollToBottom() {
 function inicial() {
 	const btnContainer = document.createElement("div");
 	btnContainer.classList.add("btn_container");
+	datos.length = 0;
+	datos.push({ curso: "" });
 	container.innerHTML = "";
 	addMensajeBot("Hola, soy Estrella, tu asistenta virtual en Polaris Data.");
 	addMensajeBot(
@@ -82,15 +87,16 @@ function inicial() {
 
 		container.appendChild(btnContainer);
 	});
+	const btnOpcion = document.querySelectorAll(".btn_opcion");
+	btnOpcion.forEach(e => {
+		e.addEventListener("click", () => {
+			datos[0].curso = e.textContent;
+			console.log(datos);
+			btnOpcion.forEach(btn => (btn.disabled = true));
+		});
+	});
 }
 inicial();
-const btnOpcion = document.querySelectorAll(".btn_opcion");
-btnOpcion.forEach(e => {
-	e.addEventListener("click", () => {
-		datos[0].curso = e.textContent;
-		console.log(datos);
-	});
-});
 
 document.getElementById("reset").addEventListener("click", inicial);
 document.getElementById("times").addEventListener("click", showChat);
