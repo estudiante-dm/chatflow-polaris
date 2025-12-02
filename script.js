@@ -1,19 +1,24 @@
 const chatContainer = document.querySelector(".chat_container");
 
 chatContainer.style.display = "none";
-
-let chatVisible = false;
+let visible = false;
 
 function showChat() {
-	if (!chatVisible) {
+	if (!visible) {
 		chatContainer.style.display = "flex";
+		scrollToBottom();
 	} else {
 		chatContainer.style.display = "none";
 	}
-	chatVisible = !chatVisible;
+
+	visible = !visible;
 }
 
-// Boton Cerrar del chat
+// Con esta funcion, forzaremos el texto abajo.
+function scrollToBottom() {
+	const chat = document.querySelector(".chat");
+	chat.scrollTop = chat.scrollHeight;
+}
+
 document.getElementById("times").addEventListener("click", showChat);
-// Boton para acceder al chat
 document.getElementById("iconChat").addEventListener("click", showChat);
