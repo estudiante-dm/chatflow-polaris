@@ -21,38 +21,74 @@ Tu objetivo es construir un chatbot que:
 ## Qué debes desarrollar
 
 ### 1. La interfaz del chatbot
+<<<<<<< HEAD
 Crearás un widget o módulo de chat que contenga:
+=======
+
+Crearás un widget o módulo de chat que contenga:
+
+>>>>>>> e5bfdb6 (Interfaz, diseño y alguna funcionalidad en js (botones cerrar))
 - Un campo de entrada.
 - Un listado de mensajes enviados y recibidos.
 - Las reglas que definirán las respuestas del bot.
 
 ### 2. La lógica del bot
+<<<<<<< HEAD
 Implementarás un sistema de respuestas simples. Puedes usar:
+=======
+
+Implementarás un sistema de respuestas simples. Puedes usar:
+
+>>>>>>> e5bfdb6 (Interfaz, diseño y alguna funcionalidad en js (botones cerrar))
 - Estructuras condicionales,
 - Un JSON de patrones,
 - O cualquier método equivalente.
 
 ### 3. La persistencia
+<<<<<<< HEAD
 Elige uno de estos enfoques:
 
 #### Sin backend:
+=======
+
+Elige uno de estos enfoques:
+
+#### Sin backend:
+
+>>>>>>> e5bfdb6 (Interfaz, diseño y alguna funcionalidad en js (botones cerrar))
 - Guardar conversaciones en `localStorage`, `IndexedDB` o archivos generados en el navegador.
 - Tener la opción de exportar esas conversaciones a **Excel/CSV/JSON**.
 
 #### Con backend (opcional):
+<<<<<<< HEAD
+=======
+
+>>>>>>> e5bfdb6 (Interfaz, diseño y alguna funcionalidad en js (botones cerrar))
 - Crear una pequeña API usando **PHP** o **Node.js**.
 - Guardar conversaciones en archivos **JSON** o en una base de datos ligera como **SQLite**.
 - Generar exportaciones desde el servidor o el panel.
 
 ### 4. Panel de administración
+<<<<<<< HEAD
 Implementarás un panel que te permita:
+=======
+
+Implementarás un panel que te permita:
+
+>>>>>>> e5bfdb6 (Interfaz, diseño y alguna funcionalidad en js (botones cerrar))
 - Ver todas las conversaciones registradas.
 - Consultar el detalle de cada conversación.
 - Eliminar conversaciones.
 - Exportarlas a un archivo descargable (**CSV/Excel/JSON**).
 
 ### 5. Mejoras opcionales
+<<<<<<< HEAD
 Además del mínimo obligatorio, deberás implementar **al menos tres mejoras adicionales**, como por ejemplo:
+=======
+
+Además del mínimo obligatorio, deberás implementar **al menos tres mejoras adicionales**, como por ejemplo:
+
+>>>>>>> e5bfdb6 (Interfaz, diseño y alguna funcionalidad en js (botones cerrar))
 - Tema claro/oscuro.
 - Respuestas rápidas.
 - Animaciones en los mensajes.
@@ -70,11 +106,19 @@ Además del mínimo obligatorio, deberás implementar **al menos tres mejoras ad
 Puedes combinar o usar solo una:
 
 **Frontend:**
+<<<<<<< HEAD
+=======
+
+>>>>>>> e5bfdb6 (Interfaz, diseño y alguna funcionalidad en js (botones cerrar))
 - JavaScript nativo
 - React
 - HTML + CSS
 
 **Backend (solo si lo eliges):**
+<<<<<<< HEAD
+=======
+
+>>>>>>> e5bfdb6 (Interfaz, diseño y alguna funcionalidad en js (botones cerrar))
 - PHP
 - Node.js
 - SQLite, MySQL, MongoDB o archivos JSON
@@ -87,12 +131,21 @@ Puedes combinar o usar solo una:
 
 Estas fases son orientativas, pero te servirán para planificar:
 
+<<<<<<< HEAD
 1. **Diseño del chatbot** (8 h) → Interfaz básica y lógica del bot.  
 2. **Estructura del frontend** (8–10 h) → Componentes o módulos bien organizados.  
 3. **Persistencia + exportación** (6–8 h) → Guardado de conversaciones y descarga en CSV/Excel/JSON.  
 4. **Backend opcional** (12 h) → Solo si decides implementarlo.  
 5. **Panel de administración** (8 h) → Listado, detalle, borrado y exportación.  
 6. **Mejoras avanzadas** (6 h) → Tres funcionalidades a elegir.  
+=======
+1. **Diseño del chatbot** (8 h) → Interfaz básica y lógica del bot.
+2. **Estructura del frontend** (8–10 h) → Componentes o módulos bien organizados.
+3. **Persistencia + exportación** (6–8 h) → Guardado de conversaciones y descarga en CSV/Excel/JSON.
+4. **Backend opcional** (12 h) → Solo si decides implementarlo.
+5. **Panel de administración** (8 h) → Listado, detalle, borrado y exportación.
+6. **Mejoras avanzadas** (6 h) → Tres funcionalidades a elegir.
+>>>>>>> e5bfdb6 (Interfaz, diseño y alguna funcionalidad en js (botones cerrar))
 7. **Documentación final** (4 h) → Manual de instalación, arquitectura y capturas.
 
 **Tiempo estimado**: 50–60 horas, dependiendo de si implementas backend o no.
@@ -117,6 +170,7 @@ Debes entregar:
 ## Flujo conversacional guiado provisional para Estrella (asistente virtual de Polaris Data)
 
 ### 1. Presentación inicial
+<<<<<<< HEAD
 > **Estrella**: Hola, soy Estrella, tu asistenta virtual en Polaris Data.  
 > *(Incorporar una foto de Estrella. Será una chica diferente a Estefanía, el chatbot de Staf pero con características similares)*  
 > Estoy aquí para ayudarte a encontrar la formación que mejor encaje contigo o tu empresa. ¿En qué tipo de información estás interesad@?
@@ -128,12 +182,30 @@ Debes entregar:
 
 ### 2. Solicitud del nombre
 Independientemente de la opción elegida:  
+=======
+
+> **Estrella**: Hola, soy Estrella, tu asistenta virtual en Polaris Data.  
+> _(Incorporar una foto de Estrella. Será una chica diferente a Estefanía, el chatbot de Staf pero con características similares)_  
+> Estoy aquí para ayudarte a encontrar la formación que mejor encaje contigo o tu empresa. ¿En qué tipo de información estás interesad@?
+
+**Opciones:**
+
+1. Formación presencial
+2. Aula virtual en directo
+3. Teleformación 24/7
+
+### 2. Solicitud del nombre
+
+Independientemente de la opción elegida:
+
+>>>>>>> e5bfdb6 (Interfaz, diseño y alguna funcionalidad en js (botones cerrar))
 > **Estrella**: Perfecto. Para dirigirme a ti, ¿cómo te llamas?  
 > **Usuario**: (escribe su nombre)  
 > **Estrella**: Encantada, **[Nombre]**. Ahora te doy la información que necesitas.
 
 ### 3. Respuesta específica según la opción seleccionada
 
+<<<<<<< HEAD
 - **Opción 1 — Formación presencial**  
   > Nuestra formación presencial se realiza directamente en tus instalaciones o en las nuestras, y se adapta totalmente a las necesidades de tu equipo. Es ideal para empresas que buscan sesiones prácticas, personalizadas y con un formador especializado.
 
@@ -145,6 +217,23 @@ Independientemente de la opción elegida:
 
 ### 4. Solicitud de datos de contacto
 Después de dar la información correspondiente:  
+=======
+- **Opción 1 — Formación presencial**
+
+  > Nuestra formación presencial se realiza directamente en tus instalaciones o en las nuestras, y se adapta totalmente a las necesidades de tu equipo. Es ideal para empresas que buscan sesiones prácticas, personalizadas y con un formador especializado.
+
+- **Opción 2 — Aula virtual en directo**
+
+  > El aula virtual en directo te permite asistir a clases en tiempo real por videoconferencia, con un formador que guía cada sesión. Es flexible, cómodo y mantiene toda la interacción propia de un curso presencial.
+
+- **Opción 3 — Teleformación 24/7**
+  > La teleformación 24/7 te permite formarte a tu ritmo, sin horarios y con acceso a los contenidos desde cualquier dispositivo. Es perfecta si buscas flexibilidad total o si tu equipo necesita avanzar de forma independiente.
+
+### 4. Solicitud de datos de contacto
+
+Después de dar la información correspondiente:
+
+>>>>>>> e5bfdb6 (Interfaz, diseño y alguna funcionalidad en js (botones cerrar))
 > **Estrella**: Si quieres que el equipo de Polaris Data se ponga en contacto contigo para enviarte información detallada o un presupuesto, déjame por favor tu correo electrónico. Si lo prefieres, también puedes añadir tu teléfono.  
 > **Usuario**: (envía correo o correo + teléfono)  
 > **Estrella**: Gracias, **[Nombre]**. He registrado tus datos. Un/a asesor/a de Polaris Data se pondrá en contacto contigo muy pronto. Si tienes más preguntas, aquí estoy para ayudarte.
