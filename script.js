@@ -1,26 +1,24 @@
-/**
- * 	1. Formación presencial
-	2. Aula virtual en directo
-	3. Teleformación 24/7
- */
 
 const chatContainer = document.querySelector(".chat_container");
 const btnTimes = document.getElementById("times");
 const btnReset = document.getElementById("reset");
 const btnIconChat = document.getElementById("iconChat");
-// btnReset.addEventListener("click", inicial);
-
+const btnContainer = document.querySelector('.btn_container');
 /***********************************************************************************************************************************************************************************
  *********************MENU ICONO ***************************
  *********************************************************************************************************************************************************
-*/
-const showChat = ()=> {
+ */
+function showChat() {
 	chatContainer.classList.toggle('menu');
 	scrollToBottom();
 }
 
 btnIconChat.addEventListener("click", showChat);
 btnTimes.addEventListener("click", showChat);
+btnReset.addEventListener("click", event=> {
+	event.preventDefault()
+	inicial()
+});
 
 // Con esta funcion, forzaremos el texto abajo.
 function scrollToBottom() {
@@ -29,11 +27,14 @@ function scrollToBottom() {
 }
 
 /************************************************************************************
-**********************************************************************************BOTONES DE SELECCION DE CURSO
+ **********************************************************************************BOTONES DE SELECCION DE CURSO
  ***********************************************************************************/
 function inicial() {
+	btnContainer.style.display = 'none';
+
 	const mensajeBot = document.querySelectorAll('.mensaje_bot');
 	mensajeBot.forEach((e,i)=> {
+		e.style.display = 'none'
 		setTimeout(() => {
 			e.style.display = 'inline-flex';
 			mostrarBtn();
@@ -43,10 +44,10 @@ function inicial() {
 inicial();
 
 function mostrarBtn() {
-	const btnContainer = document.querySelector('.btn_container');
 	setTimeout(()=> {
 		btnContainer.style.display = 'flex';
 	},2000);
+	btnContainer.style.display = 'none';
 }
 
 function btnOpcion() {
