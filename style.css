@@ -92,8 +92,9 @@ body {
 } */
 
 .chat_container {
-  display: none;
+    /* display: none; */
 }
+
 .menu {
     max-width: 400px;
     width: 100%;
@@ -198,6 +199,45 @@ body {
     box-shadow: 0 0 2px #000;
 }
 
+/* Nombre Usuario - input - */
+.user_input {
+    display: none;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
+    padding: 8px;
+    background-color: #f0f0f0;
+    border-radius: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+#userInput {
+    width: 100%;
+    max-width: 320px;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 20px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #222;
+    background-color: #fff;
+    outline: none;
+    box-sizing: border-box;
+    transition: box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+#userInput::placeholder {
+    color: #aaa;
+    font-style: normal;
+    opacity: 1;
+}
+
+#userInput:focus {
+    background-color: #fff;
+    box-shadow: 0 0 0 2px #27f4ff, 0 0 0 4px rgba(34, 119, 255, 0.15);
+}
 
 /* Botones de Opciones */
 .btn_container {
