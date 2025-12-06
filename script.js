@@ -3,9 +3,15 @@ const btnTimes = document.getElementById("times");
 const btnReset = document.getElementById("reset");
 const btnIconChat = document.getElementById("iconChat");
 const btnContainer = document.querySelector(".btn_container");
-const btnPresencial = document.getElementById("btnPresencial");
-const btnVirtual = document.getElementById("btnVirtual");
-const btnTele = document.getElementById("btnTele");
+const btnOpcion = document.querySelectorAll(".btn_opcion");
+
+/** Array PESISTENCIA DE DATOS */
+const datosUsuario = [
+	{
+		curso: "",
+		nombre: "",
+	},
+];
 /***********************************************************************************************************************************************************************************
  *********************MENU ICONO ***************************
  *********************************************************************************************************************************************************
@@ -50,7 +56,6 @@ function mostrarBtn() {
 		btnContainer.style.display = "flex";
 	}, 2000);
 	btnContainer.style.display = "none";
-	btnOpcion(e);
 	scrollToBottom();
 }
 
@@ -58,53 +63,163 @@ function mostrarBtn() {
  * Evento click de los botones
  */
 
-btnPresencial.addEventListener("click", () => {
-	const chat = document.querySelector(".chat");
-	const mensajeUserDiv = document.createElement("div");
-	mensajeUserDiv.classList.add("mensaje_user");
+btnOpcion.forEach(e => {
+	e.addEventListener("click", () => {
+		const chat = document.querySelector(".chat");
+		const mensajeUserDiv = document.createElement("div");
+		mensajeUserDiv.classList.add("mensaje_user");
 
-	const burbuja = document.createElement("div");
-	burbuja.classList.add("user_burbuja");
-	burbuja.textContent = btnPresencial.textContent;
+		const burbuja = document.createElement("div");
+		burbuja.classList.add("user_burbuja");
+		burbuja.textContent = e.textContent.trim();
 
-	mensajeUserDiv.appendChild(burbuja);
-	chat.appendChild(mensajeUserDiv);
+		mensajeUserDiv.appendChild(burbuja);
+		chat.appendChild(mensajeUserDiv);
 
-	btnContainer.style.display = "none";
-	scrollToBottom();
+		btnContainer.style.display = "none";
+		scrollToBottom();
+		datosUsuario[0].curso = e.textContent.trim();
+		console.log(datosUsuario[0].curso);
+
+		nombreUser();
+	});
 });
 
-btnVirtual.addEventListener("click", () => {
-	const chat = document.querySelector(".chat");
-	const mensajeUserDiv = document.createElement("div");
-	mensajeUserDiv.classList.add("mensaje_user");
+function nombreUser() {
+	setTimeout(() => {
+		const chat = document.querySelector(".chat");
+		const mensajeBotDiv = document.createElement("div");
+		mensajeBotDiv.classList.add("mensaje_bot");
+		mensajeBotDiv.style.display = "inline-flex";
 
-	const burbuja = document.createElement("div");
-	burbuja.classList.add("user_burbuja");
-	burbuja.textContent = btnVirtual.textContent;
+		const imagen = document.createElement("img");
+		imagen.src = "img/estrella.webp";
+		imagen.classList.add("imagen");
 
-	mensajeUserDiv.appendChild(burbuja);
-	chat.appendChild(mensajeUserDiv);
+		const burbuja = document.createElement("div");
+		burbuja.classList.add("bot_burbuja");
+		burbuja.textContent = "Perfecto. Para dirigirme a ti, ¿cómo te llamas?";
 
-	btnContainer.style.display = "none";
-	scrollToBottom();
+		mensajeBotDiv.appendChild(imagen);
+		mensajeBotDiv.appendChild(burbuja);
+		chat.appendChild(mensajeBotDiv);
+		scrollToBottom();
+	}, 1000);
+
+	setTimeout(() => {
+		const chat = document.querySelector(".chat");
+		const userInputDiv = document.createElement("div");
+		userInputDiv.classList.add("user_input");
+		userInputDiv.style.display = "flex";
+		const userInput = document.createElement("input");
+		userInput.type = "text";
+		userInput.id = "userInput";
+		userInput.placeholder = "Nombre:";
+
+		userInputDiv.appendChild(userInput);
+		chat.appendChild(userInputDiv);
+		userInput.focus();
+		scrollToBottom();
+	}, 1000);
+}
+
+function recogeNombre(nombre) {
+	datosUsuario[0].nombre = nombre;
+	setTimeout(() => {
+		const chat = document.querySelector(".chat");
+		const mensajeBotDiv = document.createElement("div");
+		mensajeBotDiv.classList.add("mensaje_bot");
+		mensajeBotDiv.style.display = "inline-flex";
+
+		const imagen = document.createElement("img");
+		imagen.src = "img/estrella.webp";
+		imagen.classList.add("imagen");
+
+		const burbuja = document.createElement("div");
+		burbuja.classList.add("bot_burbuja");
+		burbuja.textContent = `Encantada, ${nombre}. Ahora te doy la información que necesitas.`;
+
+		mensajeBotDiv.appendChild(imagen);
+		mensajeBotDiv.appendChild(burbuja);
+		chat.appendChild(mensajeBotDiv);
+		scrollToBottom();
+	});
+	console.log(datosUsuario[0].nombre);
+}
+
+// Aqui el evento del teclado para cuando se pone el nombre, mientras no tenga nada no manda nada
+document.addEventListener("keydown", event => {
+	if (event.key === "Enter") {
+		const userInput = document.getElementById("userInput");
+		if (userInput) {
+			const nombre = userInput.value.trim();
+			if (nombre) {
+				recogeNombre(nombre);
+			}
+		}
+		const container = document.querySelector(".user_input");
+		container.style.display = "none";
+	}
 });
+// function nombreUser() {
+// 	const chat = document.querySelector(".chat");
+// 	if (!chat) {
+// 		console.error("❌ .chat no encontrado");
+// 		return;
+// 	}
+// 	const div = document.createElement("div");
+// 	div.textContent = "¡PRUEBA! ¿Cómo te llamas?";
+// 	div.style.color = "red";
+// 	chat.appendChild(div);
+// }
+// btnPresencial.addEventListener("click", () => {
+// 	const chat = document.querySelector(".chat");
+// 	const mensajeUserDiv = document.createElement("div");
+// 	mensajeUserDiv.classList.add("mensaje_user");
 
-btnTele.addEventListener("click", () => {
-	const chat = document.querySelector(".chat");
-	const mensajeUserDiv = document.createElement("div");
-	mensajeUserDiv.classList.add("mensaje_user");
+// 	const burbuja = document.createElement("div");
+// 	burbuja.classList.add("user_burbuja");
+// 	burbuja.textContent = btnPresencial.textContent;
 
-	const burbuja = document.createElement("div");
-	burbuja.classList.add("user_burbuja");
-	burbuja.textContent = btnTele.textContent;
+// 	mensajeUserDiv.appendChild(burbuja);
+// 	chat.appendChild(mensajeUserDiv);
 
-	mensajeUserDiv.appendChild(burbuja);
-	chat.appendChild(mensajeUserDiv);
+// 	btnContainer.style.display = "none";
+// 	scrollToBottom();
+// });
 
-	btnContainer.style.display = "none";
-	scrollToBottom();
-});
+// btnVirtual.addEventListener("click", () => {
+// 	const chat = document.querySelector(".chat");
+// 	const mensajeUserDiv = document.createElement("div");
+// 	mensajeUserDiv.classList.add("mensaje_user");
+
+// 	const burbuja = document.createElement("div");
+// 	burbuja.classList.add("user_burbuja");
+// 	burbuja.textContent = btnVirtual.textContent;
+
+// 	mensajeUserDiv.appendChild(burbuja);
+// 	chat.appendChild(mensajeUserDiv);
+
+// 	btnContainer.style.display = "none";
+// 	scrollToBottom();
+// });
+
+// btnTele.addEventListener("click", () => {
+// 	const chat = document.querySelector(".chat");
+// 	const mensajeUserDiv = document.createElement("div");
+// 	mensajeUserDiv.classList.add("mensaje_user");
+
+// 	const burbuja = document.createElement("div");
+// 	burbuja.classList.add("user_burbuja");
+// 	burbuja.textContent = btnTele.textContent;
+
+// 	mensajeUserDiv.appendChild(burbuja);
+// 	chat.appendChild(mensajeUserDiv);
+
+// 	btnContainer.style.display = "none";
+// 	scrollToBottom();
+// });
+/*********************************************************************/
 // function showChat() {
 // 	if (!visible) {
 // 		chatContainer.style.display = "flex";
