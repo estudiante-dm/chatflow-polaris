@@ -149,8 +149,8 @@ body {
 
 /* bot */
 .mensaje_bot {
-    display: none;
-    /* display: inline-flex; */
+    /* display: none; */
+    display: inline-flex;
     align-items: center;
     gap: 10px;
     padding: 10px 20px;
@@ -201,8 +201,8 @@ body {
 
 /* Nombre Usuario - input - */
 .user_input {
-    display: none;
-    /* display: flex; */
+    /* display: none; */
+    display: flex;
     justify-content: center;
     align-items: center;
     margin: 16px;
@@ -212,7 +212,9 @@ body {
     /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); */
 }
 
-#userInput {
+#userInput,
+#emailInput,
+#telefonoInput {
     text-transform: capitalize;
     width: 100%;
     max-width: 320px;
@@ -230,21 +232,25 @@ body {
     transition: box-shadow 0.25s ease, background-color 0.25s ease;
 }
 
-#userInput::placeholder {
+#userInput::placeholder,
+#emailInput::placeholder,
+#telefonoInput::placeholder {
     color: #aaa;
     font-style: normal;
     opacity: 1;
 }
 
-#userInput:focus {
+#userInput:focus,
+#emailInput:focus,
+#telefonoInput:focus {
     background-color: #fff;
     box-shadow: 0 0 0 2px #27f4ff, 0 0 0 4px rgba(34, 119, 255, 0.15);
 }
 
 /* Botones de Opciones */
 .btn_container {
-    display: none;
-    /* display: flex; */
+    /* display: none; */
+    display: flex;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
@@ -268,6 +274,11 @@ body {
 
 .btn_opcion:hover {
     background-color: rgb(129, 170, 237);
+}
+
+/* nombre peticion bot y usuario */
+.nombre {
+    /* display: none; */
 }
 
 /* FOOTER */
