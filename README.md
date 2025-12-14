@@ -340,4 +340,4 @@ Para soporte técnico o consultas sobre implementación:
 ---
 
 _Documentación generada para ChatFlow Polaris v1.0_
-_Fecha: Diciembre 2024_
+_Fecha: Diciembre 2025_
