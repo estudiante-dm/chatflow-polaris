@@ -49,19 +49,19 @@ document.addEventListener("DOMContentLoaded", function () {
 	];
 
 	// Botones de opciones
-	btnOpcion.forEach((btn, index) => {
-		btn.addEventListener("click", function () {
+	btnOpcion.forEach((e, index) => {
+		e.addEventListener("click", function () {
 			// Crear mensaje del usuario
 			const mensajeUser = document.createElement("div");
 			mensajeUser.className = "mensaje_user";
-			mensajeUser.innerHTML = `<div class="user_burbuja">${btn.textContent.trim()}</div>`;
+			mensajeUser.innerHTML = `<div class="user_burbuja">${e.textContent.trim()}</div>`;
 			chat.appendChild(mensajeUser);
 
 			// Ocultar botones
 			btnContainer.style.display = "none";
 
 			// Guardar selección e índice
-			datosUsuario.curso = btn.textContent.trim();
+			datosUsuario.curso = e.textContent.trim();
 			datosUsuario.cursoIndex = index;
 
 			scrollToBottom();
@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
 												if (email) {
 													datosUsuario.email = email;
 													datosUsuario.telefono = telefono;
-													
+
 													console.log("Datos guardados:", datosUsuario);
 
 													emailInputDiv.style.display = "none";
@@ -204,24 +204,24 @@ document.addEventListener("DOMContentLoaded", function () {
 	function iniciarChat() {
 		// Ocultar todos los mensajes y botones inicialmente
 		const mensajesBot = chat.querySelectorAll(".mensaje_bot");
-		mensajesBot.forEach(msg => (msg.style.display = "none"));
+		mensajesBot.forEach(e => (e.style.display = "none"));
 		btnContainer.style.display = "none";
 
 		// Solo mostrar mensajes iniciales (no el de nombre)
 		const mensajesIniciales = chat.querySelectorAll(".mensaje_bot.inicialBot");
-		mensajesIniciales.forEach((msg, index) => {
+		mensajesIniciales.forEach((e, i) => {
 			setTimeout(() => {
-				msg.style.display = "inline-flex";
+				e.style.display = "inline-flex";
 				scrollToBottom();
 
 				// Mostrar botones después del último mensaje inicial
-				if (index === mensajesIniciales.length - 1) {
+				if (i === mensajesIniciales.length - 1) {
 					setTimeout(() => {
 						btnContainer.style.display = "flex";
 						scrollToBottom();
 					}, 500);
 				}
-			}, (index + 1) * 1000);
+			}, (i + 1) * 1000);
 		});
 	}
 
@@ -244,7 +244,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		// Ocultar todo y reiniciar
 		const mensajesBot = chat.querySelectorAll(".mensaje_bot.inicialBot");
 		const mensajeNombre = chat.querySelector(".mensaje_bot.nombre");
-		mensajesBot.forEach(msg => (msg.style.display = "none"));
+		mensajesBot.forEach(e => (e.style.display = "none"));
 		if (mensajeNombre) mensajeNombre.style.display = "none";
 		btnContainer.style.display = "none";
 
