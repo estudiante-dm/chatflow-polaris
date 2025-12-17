@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	];
 
 	// Botones de opciones
-	btnOpcion.forEach((e, index) => {
+	btnOpcion.forEach((e, i) => {
 		e.addEventListener("click", function () {
 			// Crear mensaje del usuario
 			const mensajeUser = document.createElement("div");
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 			// Guardar selección e índice
 			datosUsuario.curso = e.textContent.trim();
-			datosUsuario.cursoIndex = index;
+			datosUsuario.cursoIndex = i;
 
 			scrollToBottom();
 
