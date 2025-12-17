@@ -188,7 +188,6 @@ btnOpcion.forEach((e, i) => {
 												enviarContacto();
 												enviaPHP();
 											} 
-											
 										});
 
 										telefonoInput.addEventListener("keydown", e=> {
